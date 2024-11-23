@@ -24,13 +24,13 @@ import {
 } from '@ant-design/icons';
 import { mailFiles } from '@/helpers/mail-files';
 
-// 1. 实例化工作区
+// 1. 작업 공간 인스턴스화
 const workspace = new Workspace({
   entry: '/src/index.js',
   files: mailFiles,
 });
 
-// 2. 引擎初始化
+// 2. 엔진 초기화
 const engine = createEngine({
   workspace,
 });
@@ -38,18 +38,18 @@ const engine = createEngine({
 // @ts-ignore
 window.__mailWorkspace__ = workspace;
 
-// 3. 沙箱初始化
+// 3. 샌드박스 초기화
 const sandboxQuery = new DndQuery({
   context: 'iframe',
 });
 
-// 4. 图标库初始化（物料面板和组件树使用了 iconfont 里的图标）
+// 4. 아이콘 라이브러리 초기화 (아이콘 폰트의 아이콘을 사용하여 물질 패널 및 구성 요소 트리 사용)
 createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/c/font_2891794_151xsllxqd7.js',
 });
 
 /**
- * 5. 平台初始化，访问 https://local.netease.com:6006/
+ * 5. 플랫폼 초기화, https://local.netease.com:6006/에 접속
  */
 export default function App() {
   const [menuLoading, setMenuLoading] = useState(true);
@@ -77,7 +77,7 @@ export default function App() {
               <Toolbar.Separator />
               <Toolbar.Item placement="right">
                 <Space>
-                  <Button type="primary">发布</Button>
+                  <Button type="primary">배포</Button>
                 </Space>
               </Toolbar.Item>
             </Toolbar>
@@ -87,17 +87,17 @@ export default function App() {
         <Sidebar>
           <Sidebar.Item
             key="components"
-            label="组件"
+            label="구성 요소"
             icon={<AppstoreAddOutlined />}
             widgetProps={{
               menuData: menuData as any,
               loading: menuLoading,
             }}
           />
-          <Sidebar.Item key="outline" label="结构" icon={<BuildOutlined />} />
+          <Sidebar.Item key="outline" label="구조" icon={<BuildOutlined />} />
           <Sidebar.Item
             key="dependency"
-            label="依赖"
+            label="종속성"
             icon={<ClusterOutlined />}
             isFloat
             width={800}

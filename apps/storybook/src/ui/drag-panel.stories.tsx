@@ -11,20 +11,20 @@ export function Basic() {
   return (
     <>
       <DragPanel
-        title="弹层标题"
-        extra="右上角内容"
+        title="패널 제목"
+        extra="오른쪽 상단 내용"
         width={350}
-        body={<Box p="m">内容</Box>}
-        footer={<Text>底部信息</Text>}
+        body={<Box p="m">내용</Box>}
+        footer={<Text>하단 정보</Text>}
       >
-        <Button>点击唤起浮层</Button>
+        <Button>클릭하여 패널 열기</Button>
       </DragPanel>
       <DragPanel
-        title="弹层标题"
-        extra="右上角内容"
+        title="패널 제목"
+        extra="오른쪽 상단 내용"
         width={350}
-        body={<Box p="m">内容</Box>}
-        footer={<Text>底部信息</Text>}
+        body={<Box p="m">내용</Box>}
+        footer={<Text>하단 정보</Text>}
       >
         <Button
           style={{
@@ -33,7 +33,7 @@ export function Basic() {
             right: 20,
           }}
         >
-          底部浮层自动修正弹出区域
+          하단 패널 자동 조정
         </Button>
       </DragPanel>
     </>
@@ -43,20 +43,20 @@ export function Basic() {
 export function FooterCustom() {
   return (
     <DragPanel
-      title="弹层标题"
-      extra="右上角内容"
+      title="패널 제목"
+      extra="오른쪽 상단 내용"
       width={350}
-      body={<Box p="m">内容</Box>}
+      body={<Box p="m">내용</Box>}
       footer={(close) => (
         <Box display="flex" justifyContent="space-between">
-          <Text>底部信息</Text>
+          <Text>하단 정보</Text>
           <Button size="small" onClick={() => close()}>
-            点此关闭
+            클릭하여 닫기
           </Button>
         </Box>
       )}
     >
-      <Button>点击唤起浮层</Button>
+      <Button>클릭하여 패널 열기</Button>
     </DragPanel>
   );
 }
@@ -64,19 +64,19 @@ export function FooterCustom() {
 export function ResizeablePanel() {
   return (
     <DragPanel
-      title="弹层标题"
+      title="패널 제목"
       resizeable
-      extra="右上角内容"
+      extra="오른쪽 상단 내용"
       width={350}
       height={400}
       body={
         <Box p="m" textAlign="center" background="#fa8484">
-          内容
+          내용
         </Box>
       }
-      footer={<Text>底部信息</Text>}
+      footer={<Text>하단 정보</Text>}
     >
-      <Button>点击唤起浮层</Button>
+      <Button>클릭하여 패널 열기</Button>
     </DragPanel>
   );
 }

@@ -19,7 +19,7 @@ const sampleBlockCode = `
 
 const SnippetSuccessResult: IComponentPrototype = {
   name: 'SnippetSuccessResult',
-  title: '成功结果',
+  title: '성공 결과',
   icon: 'icon-tupian',
   type: 'snippet',
   package: '@music163/antd',
@@ -29,7 +29,7 @@ const SnippetSuccessResult: IComponentPrototype = {
 
 const Snippet2ColumnLayout: IComponentPrototype = {
   name: 'Snippet2ColumnLayout',
-  title: '两列布局',
+  title: '두 열 레이아웃',
   icon: 'icon-columns',
   type: 'snippet',
   package: '@music163/antd',
@@ -44,7 +44,7 @@ const Snippet2ColumnLayout: IComponentPrototype = {
 
 const Snippet3ColumnLayout: IComponentPrototype = {
   name: 'Snippet3ColumnLayout',
-  title: '三列布局',
+  title: '세 열 레이아웃',
   icon: 'icon-column-3',
   type: 'snippet',
   package: '@music163/antd',
@@ -63,14 +63,14 @@ const Snippet3ColumnLayout: IComponentPrototype = {
 
 const SnippetButtonGroup: IComponentPrototype = {
   name: 'SnippetButtonGroup',
-  title: '按钮组',
+  title: '버튼 그룹',
   icon: 'icon-anniuzu',
   type: 'snippet',
   package: '@music163/antd',
   initChildren: `
   <Space>
-    <Button type="primary">按钮1</Button>
-    <Button>按钮2</Button>
+    <Button type="primary">버튼1</Button>
+    <Button>버튼2</Button>
   </Space>
   `,
   relatedImports: ['Space', 'Button'],
@@ -128,7 +128,7 @@ export const nativeDomPrototypes = () => {
         props: [
           {
             name: 'style',
-            title: '样式',
+            title: '스타일',
             group: 'style',
             setter: 'expressionSetter',
             setterProps: {
@@ -137,7 +137,7 @@ export const nativeDomPrototypes = () => {
           },
           {
             name: 'className',
-            title: '类名',
+            title: '클래스 이름',
             setter: 'classNameSetter',
           },
           {
@@ -147,7 +147,7 @@ export const nativeDomPrototypes = () => {
           },
           {
             name: 'onClick',
-            title: '点击事件',
+            title: '클릭 이벤트',
             setter: 'actionSetter',
             group: 'event',
           },
@@ -174,19 +174,19 @@ const prototypes: Dict<IComponentPrototype> = {
       // ...(basePrototypes['Section'].props as any),
       {
         name: 'title',
-        title: '标题',
+        title: '제목',
         setter: 'textSetter',
       },
       {
         name: 'extra',
-        title: '额外内容',
+        title: '추가 내용',
         setter: 'renderSetter',
         options: [
           {
-            label: '按钮组',
+            label: '버튼 그룹',
             value: 'ButtonGroup',
             renderBody:
-              '<ButtonGroup><Button>button1</Button><Button>button2</Button></ButtonGroup>',
+              '<ButtonGroup><Button>버튼1</Button><Button>버튼2</Button></ButtonGroup>',
             relatedImports: ['ButtonGroup', 'Button'],
           },
         ],
@@ -194,7 +194,7 @@ const prototypes: Dict<IComponentPrototype> = {
       },
       {
         name: 'className',
-        title: '类名',
+        title: '클래스 이름',
         setter: 'classNameSetter',
         group: 'style',
       },
@@ -202,7 +202,7 @@ const prototypes: Dict<IComponentPrototype> = {
   },
   Box: {
     name: 'Box',
-    title: '盒子',
+    title: '상자',
     icon: 'icon-mianban',
     type: 'container',
     package: '@music163/antd',
@@ -233,33 +233,33 @@ const prototypes: Dict<IComponentPrototype> = {
       },
       {
         name: 'onClick',
-        title: '点击事件',
+        title: '클릭 이벤트',
         setter: 'eventSetter',
         template: '(e) => {\n  {{content}}\n}',
-        tip: '回调参数说明：e 为事件对象',
+        tip: '콜백 매개변수 설명: e는 이벤트 객체입니다',
       },
       {
         name: 'renderFoo',
-        title: 'foo自定义渲染',
+        title: 'foo 사용자 정의 렌더링',
         setter: 'renderSetter',
         options: [
           {
-            label: '占位空间',
+            label: '자리 표시 공간',
             value: 'Box',
-            render: '() => <Box>test</Box>',
+            render: '() => <Box>테스트</Box>',
             relatedImports: ['Box'],
           },
           {
-            label: '占位文本',
+            label: '자리 표시 텍스트',
             value: 'Text',
-            render: '() => <Text>text</Text>',
+            render: '() => <Text>텍스트</Text>',
             relatedImports: ['Text'],
           },
         ],
       },
       {
         name: 'className',
-        title: '类名',
+        title: '클래스 이름',
         setter: 'classNameSetter',
         group: 'style',
       },
@@ -286,7 +286,7 @@ const prototypes: Dict<IComponentPrototype> = {
     type: 'element',
     icon: 'icon-wenzi',
     package: '@music163/antd',
-    initChildren: '文本内容',
+    initChildren: '텍스트 내용',
   },
   Placeholder: {
     name: 'Placeholder',

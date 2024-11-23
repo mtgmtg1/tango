@@ -8,10 +8,10 @@ const OtherPanel = observer(({ autoRemove, setAutoRemove }: any) => {
   };
   return (
     <Row>
-      <label>自动移除未引用变量：</label>
+      <label>자동으로 참조되지 않은 변수를 제거:</label>
       <Switch
-        checkedChildren="开启"
-        unCheckedChildren="关闭"
+        checkedChildren="켜기"
+        unCheckedChildren="끄기"
         onChange={onChange}
         checked={autoRemove}
       />

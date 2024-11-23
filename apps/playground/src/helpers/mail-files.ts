@@ -35,7 +35,7 @@ const tangoConfigJson = {
       resources: ['https://unpkg.com/react-is@{{version}}/umd/react-is.production.min.js'],
     },
     '@music163/tango-boot': {
-      description: '云音乐低代码运行时框架',
+      description: '클라우드 음악 저코드 런타임 프레임워크',
       version: '0.2.5',
       library: 'TangoBoot',
       type: 'baseDependency',
@@ -43,7 +43,7 @@ const tangoConfigJson = {
       // resources: ['http://localhost:9001/boot.js'],
     },
     '@music163/tango-mail': {
-      description: 'TangoMail 基础物料',
+      description: 'TangoMail 기본 자료',
       version: '0.2.4',
       library: 'TangoMail',
       type: 'baseDependency',

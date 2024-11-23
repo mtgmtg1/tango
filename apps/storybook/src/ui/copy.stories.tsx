@@ -8,7 +8,7 @@ export default {
 export function Basic() {
   return (
     <CopyClipboard text="hello">
-      {(copied) => <button>{copied ? 'copied' : 'copy'}</button>}
+      {(copied) => <button>{copied ? '복사됨' : '복사'}</button>}
     </CopyClipboard>
   );
 }

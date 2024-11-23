@@ -47,7 +47,7 @@ const tangoConfigJson = {
       resources: ['https://unpkg.com/moment@{{version}}/moment.js'],
     },
     '@music163/tango-boot': {
-      description: '云音乐低代码运行时框架',
+      description: '클라우드 음악 저코드 런타임 프레임워크',
       version: '0.3.5',
       library: 'TangoBoot',
       type: 'baseDependency',
@@ -55,7 +55,7 @@ const tangoConfigJson = {
       // resources: ['http://localhost:9001/boot.js'],
     },
     '@music163/antd': {
-      description: '云音乐低代码中后台应用基础物料',
+      description: '클라우드 음악 저코드 중백그라운드 애플리케이션 기본 자료',
       version: '0.2.6',
       library: 'TangoAntd',
       type: 'baseDependency',
@@ -171,14 +171,14 @@ class App extends React.Component {
         <Section tid="section0">
           <Box></Box>
         </Section>
-        <Section tid="section1" title="Section Title">
+        <Section tid="section1" title="섹션 제목">
           your input: <Input tid="input1" defaultValue="hello" />
           copy input: <Input value={tango.page.input1?.value} />
           <Table
           columns={[
-            { title: "姓名", dataIndex: "name", key: "name" },
-            { title: "年龄", dataIndex: "age", key: "age" },
-            { title: "住址", dataIndex: "address", key: "address" },
+            { title: "이름", dataIndex: "name", key: "name" },
+            { title: "나이", dataIndex: "age", key: "age" },
+            { title: "주소", dataIndex: "address", key: "address" },
           ]}
           tid="table1"
         />
@@ -190,10 +190,10 @@ class App extends React.Component {
             <Button tid="button1">button</Button>
           </Space>
         </Section>
-        <Section title="区块标题" tid="section3">
+        <Section title="블록 제목" tid="section3">
           <FormilyForm tid="formilyForm1">
-            <FormilyFormItem name="input1" component="Input" label="表单项" />
-            <FormilyFormItem name="select1" component="Select" label="表单项" />
+            <FormilyFormItem name="input1" component="Input" label="폼 항목" />
+            <FormilyFormItem name="select1" component="Select" label="폼 항목" />
           </FormilyForm>
         </Section>
         <Section title="原生 DOM" tid="section4">
@@ -291,7 +291,7 @@ registerComponentPrototype({
   exportType: 'namedExport',
   package: '/src/components',
   props: [
-    { name: 'background', title: '背景色', setter: 'colorSetter'  },
+    { name: 'background', title: '背景���', setter: 'colorSetter'  },
   ],
 });
 `;
@@ -377,16 +377,16 @@ export default defineServices({
   add: {
     url: 'https://nei.hz.netease.com/api/apimock-v2/c45109399a1d33d83e32a59984b25b00/api/users',
     method: 'post',
-    description: '新增用户'
+    description: '사용자 추가'
   },
   update: {
     url: 'https://nei.hz.netease.com/api/apimock-v2/c45109399a1d33d83e32a59984b25b00/api/users',
     method: 'post',
-    description: '更新用户'
+    description: '사용자 업데이트'
   },
   delete: {
     url: 'https://nei.hz.netease.com/api/apimock-v2/c45109399a1d33d83e32a59984b25b00/api/users?id=1',
-    description: '删除用户'
+    description: '사용자 삭제'
   },
 });
 `;
@@ -451,7 +451,7 @@ export const genDefaultPage = (index: number) => ({
 
   function App() {
     return (
-      <Page title="空白模板${index}">
+      <Page title="빈 템플릿 ${index}">
         <Section></Section>
       </Page>
     )

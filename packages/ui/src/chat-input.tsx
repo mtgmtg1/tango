@@ -25,9 +25,9 @@ export interface ChatInputProps {
 }
 
 export function ChatInput({
-  title = '智能编程助手',
+  title = 'AI 프로그래밍 어시스턴트',
   showCloseIcon = true,
-  placeholder = '请简单描述你要执行的动作',
+  placeholder = '실행하려는 작업을 간단히 설명해주세요',
   onGenerate,
   onApply,
   onClose,
@@ -74,13 +74,13 @@ export function ChatInput({
             ret && setPreview(ret);
           }}
         >
-          生成
+          생성
         </Button>
       </Box>
       <Box minHeight={48} background="fill2" p="m" fontSize="12px" css={chatBoxStyle}>
-        <Text as="code">结果：{preview || '暂无'}</Text>
+        <Text as="code">결과：{preview || '없음'}</Text>
         <Button size="small" disabled={!preview} onClick={() => onApply(preview)}>
-          应用
+          적용
         </Button>
       </Box>
     </Box>

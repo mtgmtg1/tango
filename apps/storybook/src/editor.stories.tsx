@@ -26,7 +26,7 @@ function About(props) {
           <Button type="primary" onClick={increment}>
             +1
           </Button>
-          <p>原生html元素不可拖拽</p>
+          <p>원시 HTML 요소는 드래그할 수 없습니다</p>
         </Section>
       </Page>
     </Layout>

@@ -22,7 +22,7 @@ export default {
 };
 
 /**
- * 表单值预览
+ * 폼 값 미리보기
  */
 const FormValuePreview = observer(({ model }: { model: FormModel }) => {
   const data = toJS(model.values);
@@ -49,7 +49,7 @@ function SettingFormDemo({ initValues, prototype }: SettingFormDemoProps) {
         />
       </Box>
       <Box position="relative">
-        <Card title="表单状态预览" style={{ position: 'sticky', top: 0 }}>
+        <Card title="폼 상태 미리보기" style={{ position: 'sticky', top: 0 }}>
           <FormValuePreview model={model} />
         </Card>
       </Box>
@@ -59,7 +59,7 @@ function SettingFormDemo({ initValues, prototype }: SettingFormDemoProps) {
 
 const prototypeHasBasicProps: IComponentPrototype = {
   name: 'Sample',
-  title: '演示组件',
+  title: '데모 컴포넌트',
   package: 'sample-pkg',
   type: 'element',
   docs: 'https://4x-ant-design.antgroup.com/components/slider-cn',
@@ -149,9 +149,9 @@ export function DeprecatedProp() {
             name: 'number',
             title: 'numberSetter',
             setter: 'numberSetter',
-            tip: '这是一个文本属性',
+            tip: '이것은 텍스트 속성입니다',
             docs: 'https://4x-ant-design.antgroup.com/components/slider-cn',
-            deprecated: '使用 text2 替代',
+            deprecated: 'text2로 대체',
           },
           {
             name: 'number1',
@@ -178,13 +178,13 @@ export function Validate() {
             setter: 'numberSetter',
             validate: (value) => {
               if (!value && value !== 0) {
-                return '必填';
+                return '필수';
               }
               if (value < 0) {
-                return '必须大于 0';
+                return '0보다 커야 합니다';
               }
               if (value > 10) {
-                return '必须小于等于 10';
+                return '10 이하이어야 합니다';
               }
             },
           },
@@ -247,10 +247,10 @@ export function InitValues() {
           text: 'text',
           number: '{{tango.stores.user?.age}}',
         },
-        // 只会有一种情况传下来的是字符串，就是用户代码里存在 rest operator，这时候不需要额外处理，提示用户就使用代码模式
+        // 유일한 경우는 사용자가 코드에서 rest 연산자를 사용하는 경우이며, 이 경우 추가 처리가 필요하지 않으며, 사용자에게 코드 모드를 사용하도록 안내합니다
         object2: '{{{ text: "text22", number: 22, ...{ extra: "some" } }}}',
-        list: [{ key: 'aaa' }, { key: 'bbb' }], // list object
-        list1: "{{[{ key: 'aaa' }, { key: 'bbb' }]}}", // raw code
+        list: [{ key: 'aaa' }, { key: 'bbb' }], // 리스트 객체
+        list1: "{{[{ key: 'aaa' }, { key: 'bbb' }]}}", // 원시 코드
       }}
       prototype={{
         name: 'InitValues',
@@ -259,17 +259,17 @@ export function InitValues() {
         props: [
           {
             name: 'bool',
-            title: 'value初始化',
+            title: '값 초기화',
             setter: 'boolSetter',
           },
           {
             name: 'bool1',
-            title: 'value初始化',
+            title: '값 초기화',
             setter: 'boolSetter',
           },
           {
             name: 'bool2',
-            title: '无初值',
+            title: '초기값 없음',
             setter: 'boolSetter',
           },
           {
@@ -374,9 +374,9 @@ const prototypeHasExtraProps: IComponentPrototype = {
       title: 'choiceSetter',
       setter: 'choiceSetter',
       options: [
-        { label: '选项1', value: '1' },
-        { label: '选项2', value: '2' },
-        { label: '选项3', value: '3' },
+        { label: '옵션1', value: '1' },
+        { label: '옵션2', value: '2' },
+        { label: '옵션3', value: '3' },
       ],
     },
     {
@@ -384,9 +384,9 @@ const prototypeHasExtraProps: IComponentPrototype = {
       title: 'pickerSetter',
       setter: 'pickerSetter',
       options: [
-        { label: '选项1', value: '1' },
-        { label: '选项2', value: '2' },
-        { label: '选项3', value: '3' },
+        { label: '옵션1', value: '1' },
+        { label: '옵션2', value: '2' },
+        { label: '옵션3', value: '3' },
       ],
     },
     {

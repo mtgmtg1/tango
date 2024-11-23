@@ -10,8 +10,8 @@ export function Basic() {
     <Menu
       activeKey="2"
       items={[
-        { key: '1', label: 'bob', note: 'male', deletable: true },
-        { key: '2', label: 'alice', note: 'female', deletable: true },
+        { key: '1', label: 'bob', note: '남성', deletable: true },
+        { key: '2', label: 'alice', note: '여성', deletable: true },
         { key: '3', label: 'tom', deletable: true },
       ]}
     ></Menu>

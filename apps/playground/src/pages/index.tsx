@@ -30,7 +30,7 @@ import { useState } from 'react';
 const menuData = {
   common: [
     {
-      title: '常用',
+      title: '일반',
       items: [
         'Button',
         'Section',
@@ -47,52 +47,52 @@ const menuData = {
       ],
     },
     {
-      title: '输入',
+      title: '입력',
       items: ['Input', 'InputNumber', 'Select'],
     },
     {
-      title: 'Formily表单',
+      title: 'Formily 폼',
       items: ['FormilyForm', 'FormilyFormItem', 'FormilySubmit', 'FormilyReset'],
     },
     {
-      title: '数据展示',
+      title: '데이터 표시',
       items: ['Comment'],
     },
   ],
 };
 
-// 1. 实例化工作区
+// 1. 워크스페이스 인스턴스화
 const workspace = new Workspace({
   entry: '/src/index.js',
   files: sampleFiles,
   prototypes,
 });
 
-// inject workspace to window for debug
+// 디버그를 위해 윈도우에 워크스페이스 주입
 (window as any).__workspace__ = workspace;
 
-// 2. 引擎初始化
+// 2. 엔진 초기화
 const engine = createEngine({
   workspace,
   menuData,
-  defaultActiveView: 'design', // dual code design
+  defaultActiveView: 'design', // 코드 디자인 이중 모드
 });
 
 // @ts-ignore
 window.__workspace__ = workspace;
 
-// 3. 沙箱初始化
+// 3. 샌드박스 초기화
 const sandboxQuery = new DndQuery({
   context: 'iframe',
 });
 
-// 4. 图标库初始化（物料面板和组件树使用了 iconfont 里的图标）
+// 4. 아이콘 라이브러리 초기화 (물자 패널과 컴포넌트 트리에 iconfont의 아이콘 사용)
 createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/c/font_2891794_151xsllxqd7.js',
 });
 
 /**
- * 5. 平台初始化，访问 https://local.netease.com:6006/
+ * 5. 플랫폼 초기화, https://local.netease.com:6006/에 접속
  */
 export default function App() {
   const [showNewPageModal, setShowNewPageModal] = useState(false);
@@ -116,7 +116,7 @@ export default function App() {
               <Toolbar.Item key="routeSwitch" placement="left" activeViews={['design']} />
               <Toolbar.Item key="addPage" placement="left" activeViews={['design']}>
                 <Action
-                  tooltip="添加页面"
+                  tooltip="페이지 추가"
                   shape="outline"
                   icon={<PlusOutlined />}
                   onClick={() => setShowNewPageModal(true)}
@@ -129,12 +129,12 @@ export default function App() {
               <Toolbar.Separator />
               <Toolbar.Item placement="right">
                 <Space>
-                  <Button type="primary">发布</Button>
+                  <Button type="primary">발행</Button>
                 </Space>
               </Toolbar.Item>
             </Toolbar>
             <Modal
-              title="添加新页面"
+              title="새 페이지 추가"
               open={showNewPageModal}
               onCancel={() => setShowNewPageModal(false)}
               footer={null}
@@ -147,12 +147,12 @@ export default function App() {
                 }}
                 layout="vertical"
               >
-                <Form.Item label="文件名" name="name" required rules={[{ required: true }]}>
-                  <Input placeholder="请输入文件名" />
+                <Form.Item label="파일명" name="name" required rules={[{ required: true }]}>
+                  <Input placeholder="파일명을 입력하세요" />
                 </Form.Item>
                 <Form.Item>
                   <Button type="primary" htmlType="submit">
-                    提交
+                    제출
                   </Button>
                 </Form.Item>
               </Form>
@@ -163,24 +163,24 @@ export default function App() {
         <Sidebar>
           <Sidebar.Item
             key="components"
-            label="组件"
+            label="컴포넌트"
             icon={<AppstoreAddOutlined />}
             widgetProps={{
               menuData,
             }}
           />
-          <Sidebar.Item key="outline" label="结构" icon={<BuildOutlined />} />
+          <Sidebar.Item key="outline" label="구조" icon={<BuildOutlined />} />
           <Sidebar.Item
             key="variables"
-            label="变量"
+            label="변수"
             icon={<FunctionOutlined />}
             isFloat
             width={800}
           />
-          <Sidebar.Item key="dataSource" label="接口" icon={<ApiOutlined />} isFloat width={800} />
+          <Sidebar.Item key="dataSource" label="인터페이스" icon={<ApiOutlined />} isFloat width={800} />
           <Sidebar.Item
             key="dependency"
-            label="依赖"
+            label="의존성"
             icon={<PackageOutlined />}
             isFloat
             width={800}
@@ -208,7 +208,7 @@ export default function App() {
                   }
                 }
               }}
-              navigatorExtra={<Button size="small">hello world</Button>}
+              navigatorExtra={<Button size="small">안녕하세요</Button>}
             />
           </WorkspaceView>
         </WorkspacePanel>

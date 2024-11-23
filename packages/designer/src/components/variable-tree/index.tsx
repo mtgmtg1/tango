@@ -92,14 +92,14 @@ export interface VariableTreeProps {
   height?: number | string;
   showViewButton?: boolean;
   /**
-   * 自定义头部
+   * 자체 정의 헤더
    */
   renderHeaderExtra?: (
     props: VariableTreeProps,
     state: IVariableTreeRenderDetailState,
   ) => React.ReactNode;
   /**
-   * 自定义变量详情渲染
+   * 자체 정의 변수 세부 렌더링
    * @param props
    * @param state
    * @returns
@@ -169,7 +169,7 @@ export function VariableTree(props: VariableTreeProps) {
       <Box className="VariableList" width="40%" overflow="auto">
         {renderHeaderExtra?.(props, state)}
         <Box mb="m" position="sticky" top="0" bg="white" zIndex={2}>
-          <Search placeholder="请输入变量名" onChange={(val) => setKeyword(val?.trim())} />
+          <Search placeholder="변수 이름 입력" onChange={(val) => setKeyword(val?.trim())} />
         </Box>
         <Tree
           blockNode
@@ -204,7 +204,7 @@ export function VariableTree(props: VariableTreeProps) {
                     {node.showRemoveButton && (
                       <Popconfirm
                         zIndex={99999}
-                        title={`确认删除吗 ${node.title}？该操作会导致引用此模型的代码报错，请谨慎操作！`}
+                        title={`${node.title} 삭제 확인? 이 작업은 참조하는 코드에 오류를 일으켜 신중하게 조작하세요!`}
                         onCancel={(e) => {
                           e.stopPropagation();
                         }}
@@ -229,7 +229,7 @@ export function VariableTree(props: VariableTreeProps) {
                     )}
                     <CopyClipboard text={nodePath}>
                       {({ copied, onClick }) => {
-                        const label = copied ? '已复制' : '复制变量路径';
+                        const label = copied ? '복사됨' : '변수 경로 복사';
                         return (
                           <Tooltip title={label}>
                             <Button
@@ -247,7 +247,7 @@ export function VariableTree(props: VariableTreeProps) {
                       }}
                     </CopyClipboard>
                     {showView && (
-                      <Tooltip title="查看变量详情">
+                      <Tooltip title="변수 세부 정보 보기">
                         <Button
                           type="text"
                           size="small"
@@ -269,7 +269,7 @@ export function VariableTree(props: VariableTreeProps) {
                 <Text mr="m">{node.title}</Text>
                 <Box>
                   {/^\$?stores$/.test(node.key) && (
-                    <Tooltip title="新建数据模型">
+                    <Tooltip title="새 데이터 모델 생성">
                       <Button
                         type="text"
                         size="small"
@@ -282,7 +282,7 @@ export function VariableTree(props: VariableTreeProps) {
                     </Tooltip>
                   )}
                   {node.showAddButton && /^stores\.[a-zA-Z0-9]+$/.test(node.key) && (
-                    <Tooltip title={`向 ${node.title} 中添加变量`}>
+                    <Tooltip title={`${node.title}에 변수 추가`}>
                       <Button
                         type="text"
                         size="small"
@@ -296,7 +296,7 @@ export function VariableTree(props: VariableTreeProps) {
                     </Tooltip>
                   )}
                   {/^services(\.[a-zA-Z0-9]+)?$/.test(node.key) && (
-                    <Tooltip title={`向 ${node.title} 中添加服务函数`}>
+                    <Tooltip title={`${node.title}에 서비스 함수 추가`}>
                       <Button
                         type="text"
                         size="small"
@@ -341,7 +341,7 @@ export function VariableTree(props: VariableTreeProps) {
                       data={activeNode}
                       onSave={(variableKey, code) => {
                         onUpdateStoreVariable(variableKey, code);
-                        // 更新当前节点 code
+                        // 현재 노드의 code 업데이트
                         setActiveNode((pre) => ({ ...pre, raw: code }));
                       }}
                     />
@@ -353,7 +353,7 @@ export function VariableTree(props: VariableTreeProps) {
           if (mode === 'serviceDetail') {
             return (
               <>
-                <Panel shape="solid" title="服务函数配置">
+                <Panel shape="solid" title="서비스 함수 설정">
                   <AddServiceForm
                     key={activeNode.key}
                     serviceModules={serviceModules}
@@ -370,7 +370,7 @@ export function VariableTree(props: VariableTreeProps) {
                     }}
                   />
                 </Panel>
-                <Panel shape="solid" title="服务函数预览" mt="l">
+                <Panel shape="solid" title="서비스 함수 미리보기" mt="l">
                   <ServicePreview
                     key={activeNode.key}
                     appContext={appContext}
@@ -410,7 +410,7 @@ export function VariableTree(props: VariableTreeProps) {
           }
           if (mode === 'addService') {
             return (
-              <Panel shape="solid" title="创建服务函数">
+              <Panel shape="solid" title="서비스 함수 생성">
                 <AddServiceForm
                   key={activeNode.key}
                   serviceModules={serviceModules}

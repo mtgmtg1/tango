@@ -11,14 +11,14 @@ export default {
 export const Basic = {
   args: {
     icon: <PlusOutlined />,
-    tooltip: '添加服务函数',
+    tooltip: '서비스 함수 추가',
   },
 };
 
 export const Link = {
   args: {
     icon: <QuestionCircleOutlined />,
-    tooltip: '查看帮助文档',
+    tooltip: '도움말 문서 보기',
     href: 'https://music.163.com',
   },
 };
@@ -26,7 +26,7 @@ export const Link = {
 export const Outline = {
   args: {
     icon: <PlusOutlined />,
-    tooltip: '添加服务函数',
+    tooltip: '서비스 함수 추가',
     shape: 'outline',
   },
 };
@@ -35,18 +35,18 @@ export const Small = {
   args: {
     size: 'small',
     icon: <PlusOutlined />,
-    tooltip: '添加服务函数',
+    tooltip: '서비스 함수 추가',
   },
 };
 
 export const Disabled = () => {
   return (
     <Space>
-      <Action icon={<PlusOutlined />} tooltip="添加服务函数" disabled />
-      <Action icon={<PlusOutlined />} tooltip="添加服务函数" disabled shape="outline" />
+      <Action icon={<PlusOutlined />} tooltip="서비스 함수 추가" disabled />
+      <Action icon={<PlusOutlined />} tooltip="서비스 함수 추가" disabled shape="outline" />
       <Action
         icon={<QuestionCircleOutlined />}
-        tooltip="查看帮助文档"
+        tooltip="도움말 문서 보기"
         href="https://music.163.com"
         disabled
       />
@@ -57,10 +57,10 @@ export const Disabled = () => {
 export const List = () => {
   return (
     <Space>
-      <Action icon={<PlusOutlined />} tooltip="添加服务函数" />
+      <Action icon={<PlusOutlined />} tooltip="서비스 함수 추가" />
       <Action
         icon={<QuestionCircleOutlined />}
-        tooltip="查看帮助文档"
+        tooltip="도움말 문서 보기"
         href="https://music.163.com"
       />
     </Space>

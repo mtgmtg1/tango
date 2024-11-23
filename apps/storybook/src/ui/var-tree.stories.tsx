@@ -8,7 +8,7 @@ export default {
 
 const data = [
   {
-    title: 'Stores',
+    title: '스토어',
     key: 'stores',
     selectable: false,
     children: [
@@ -35,7 +35,7 @@ const data = [
           {
             title: 'name',
             key: 'stores.book.name',
-            raw: '"JavaScript 高级程序设计"',
+            raw: '"JavaScript 고급 프로그래밍"',
           },
           {
             title: 'price',
@@ -47,7 +47,7 @@ const data = [
     ],
   },
   {
-    title: 'Services',
+    title: '서비스',
     key: 'services',
     selectable: false,
     children: [

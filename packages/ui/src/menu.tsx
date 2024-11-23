@@ -51,27 +51,27 @@ const MenuItem = coral(
 
 type MenuItemType = {
   /**
-   * 标识符
+   * 식별자
    */
   key: string;
   /**
-   * 文案
+   * 텍스트
    */
   label: string;
   /**
-   * 附加文案
+   * 추가 텍스트
    */
   note?: string;
   /**
-   * 是否可编辑
+   * 편집 가능 여부
    */
   editable?: boolean;
   /**
-   * 是否可删除
+   * 삭제 가능 여부
    */
   deletable?: boolean;
   /**
-   * 删除时的确认消息
+   * 삭제 시 확인 메시지
    */
   deletableConfirm?: string;
 };
@@ -115,11 +115,11 @@ export function Menu({
             )}
             {item.deletable && (
               <Popconfirm
-                title={item.deletableConfirm || '确定执行此操作吗？'}
-                okText="确定"
-                cancelText="取消"
+                title={item.deletableConfirm || '이 작업을 실행하시겠습니까?'}
+                okText="확인"
+                cancelText="취소"
                 onConfirm={(e) => {
-                  // 阻止冒泡，否则删除的时候会有 Bug
+                  // 버블링을 방지하여 삭제 시 버그가 발생하는 것을 방지
                   e.stopPropagation();
                   onDelete(item.key);
                 }}

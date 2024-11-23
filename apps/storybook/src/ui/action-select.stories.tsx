@@ -14,7 +14,7 @@ const options = [
 
 export const Basic = {
   args: {
-    defaultText: '选择动作',
+    defaultText: '동작 선택',
     options,
     onSelect: console.log,
   },
@@ -22,7 +22,7 @@ export const Basic = {
 
 export const showInput = {
   args: {
-    text: '选择动作',
+    text: '동작 선택',
     options,
     showInput: true,
   },
